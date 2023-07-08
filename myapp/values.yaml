@@ -5,7 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: forritu72/argotest:latest
+  # dockerhub repo account
+  repository: naveenguptaus/argotest:latest
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
