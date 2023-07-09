@@ -9,7 +9,7 @@ image:
   repository: naveenguptaus/argotest
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: app-7
+  tag: app-8
 
 imagePullSecrets: []
 nameOverride: ""
