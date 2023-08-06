@@ -41,13 +41,15 @@ service:
   port: 5000
 
 ingress:
-  enabled: false
+  enabled: true
   className: ""
-  annotations: {}
+  annotations: 
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/group.name: mygroup.web
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: chart-example.local
+    - host: python.naveenguptaaws.com
       paths:
         - path: /
           pathType: ImplementationSpecific
