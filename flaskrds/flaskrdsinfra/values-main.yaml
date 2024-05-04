@@ -45,7 +45,7 @@ ingress:
   className: "alb"
   annotations: 
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/group.name: mygroup.web
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:074548625786:certificate/71835d1f-c82d-4e9c-8cb6-f078d8589896
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
