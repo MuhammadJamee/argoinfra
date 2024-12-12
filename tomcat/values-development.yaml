@@ -39,7 +39,7 @@ podAnnotations: {}
 podLabels: {}
 
 podSecurityContext: 
-   fsGroup: tomcat
+  fsGroup: tomcat
 
 securityContext: 
   capabilities:
