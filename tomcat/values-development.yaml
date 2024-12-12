@@ -64,9 +64,9 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: tomcat-poc.local
+    - host: tomcat-poc.apps-crc.testing
       paths:
-        - path: /
+        - path: /hello-servlet/hello
           pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
