@@ -5,6 +5,7 @@ metadata:
   labels:
     {{- include "tomcat.labels" . | nindent 4 }}  # Labels inherited from your service.yaml
 spec:
+  path: //hello-servlet/hello
   port:
     targetPort: {{ .Values.service.port }}  # The target port from values.yaml (8080)
   to:
