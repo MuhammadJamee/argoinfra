@@ -1,14 +1,14 @@
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata:
-  name: {{ include "tomcat.fullname" . }}  # Name of the route based on the Helm release
-  labels:
-    {{- include "tomcat.labels" . | nindent 4 }}  # Labels inherited from your service.yaml
-spec:
-  path: /hello-servlet/hello
-  port:
-    targetPort: {{ .Values.service.port }}  # The target port from values.yaml (8080)
-  to:
-    kind: Service
-    name: {{ include "tomcat.fullname" . }}  # The service name, which is the same as the release name
-    weight: 100  # Route all traffic (100%) to the service
+# apiVersion: route.openshift.io/v1
+# kind: Route
+# metadata:
+#   name: {{ include "tomcat.fullname" . }}  # Name of the route based on the Helm release
+#   labels:
+#     {{- include "tomcat.labels" . | nindent 4 }}  # Labels inherited from your service.yaml
+# spec:
+#   path: /hello-servlet/hello
+#   port:
+#     targetPort: {{ .Values.service.port }}  # The target port from values.yaml (8080)
+#   to:
+#     kind: Service
+#     name: {{ include "tomcat.fullname" . }}  # The service name, which is the same as the release name
+#     weight: 100  # Route all traffic (100%) to the service
