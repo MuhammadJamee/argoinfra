@@ -95,9 +95,9 @@ readinessProbe:
   httpGet:
     path: /hello-servlet/hello
     port: 8080
-  initialDelaySeconds: 10  # Delay before the first probe
-  timeoutSeconds: 5  # Timeout for each probe
-  periodSeconds: 5  # Interval between probes
+  initialDelaySeconds: 15  # Delay before the first probe
+  timeoutSeconds: 10  # Timeout for each probe
+  periodSeconds: 3  # Interval between probes
   failureThreshold: 3  # How many failed probes before declaring the container unhealthy
 
 #This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
