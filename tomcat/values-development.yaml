@@ -38,16 +38,16 @@ podAnnotations: {}
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 podLabels: {}
 
-podSecurityContext:
-  fsGroup: 1001  # Replace with the actual GID of the 'tomcat' group
+podSecurityContext: {}
+  # fsGroup: 1001  # Replace with the actual GID of the 'tomcat' group
 
-securityContext:
-  capabilities:
-    drop:
-      - ALL
-  readOnlyRootFilesystem: true
-  runAsNonRoot: true
-  runAsUser: 1001  # Replace with the actual UID of the 'tomcat' user
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #     - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1001  # Replace with the actual UID of the 'tomcat' user
 
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
 service:
