@@ -80,30 +80,30 @@ resources:
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   limits:
-    cpu: 100m
-    memory: 128Mi
+    memory: "512Mi"
+    cpu: "1"
   requests:
-    cpu: 100m
-    memory: 128Mi
+    memory: "256Mi"
+    cpu: "0.5"
 
 # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
-readinessProbe:
-  httpGet:
-    path: /hello-servlet/hello
-    port: 8080
-  initialDelaySeconds: 25
-  timeoutSeconds: 10
-  periodSeconds: 3
-  failureThreshold: 3
+# readinessProbe:
+#   httpGet:
+#     path: /hello-servlet/hello
+#     port: 8080
+#   initialDelaySeconds: 25
+#   timeoutSeconds: 10
+#   periodSeconds: 3
+#   failureThreshold: 3
 
-livenessProbe:
-  httpGet:
-    path: /hello-servlet/hello
-    port: 8080
-  initialDelaySeconds: 25
-  timeoutSeconds: 10
-  periodSeconds: 3
-  failureThreshold: 3
+# livenessProbe:
+#   httpGet:
+#     path: /hello-servlet/hello
+#     port: 8080
+#   initialDelaySeconds: 25
+#   timeoutSeconds: 10
+#   periodSeconds: 3
+#   failureThreshold: 3
 
 
 #This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
