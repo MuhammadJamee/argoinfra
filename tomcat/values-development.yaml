@@ -91,7 +91,7 @@ readinessProbe:
   httpGet:
     path: /hello-servlet/hello
     port: 8080
-  initialDelaySeconds: 15
+  initialDelaySeconds: 25
   timeoutSeconds: 10
   periodSeconds: 3
   failureThreshold: 3
@@ -100,7 +100,7 @@ livenessProbe:
   httpGet:
     path: /hello-servlet/hello
     port: 8080
-  initialDelaySeconds: 15
+  initialDelaySeconds: 25
   timeoutSeconds: 10
   periodSeconds: 3
   failureThreshold: 3
