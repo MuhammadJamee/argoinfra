@@ -87,18 +87,18 @@ resources:
     memory: 128Mi
 
 # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
-livenessProbe:
-  httpGet:
-    path: /hello-servlet/hello
-    port: 8080
-readinessProbe:
-  httpGet:
-    path: /hello-servlet/hello
-    port: 8080
-  initialDelaySeconds: 15  # Delay before the first probe
-  timeoutSeconds: 10  # Timeout for each probe
-  periodSeconds: 3  # Interval between probes
-  failureThreshold: 3  # How many failed probes before declaring the container unhealthy
+# livenessProbe:
+#   httpGet:
+#     path: /hello-servlet/hello
+#     port: 8080
+# readinessProbe:
+#   httpGet:
+#     path: /hello-servlet/hello
+#     port: 8080
+#   initialDelaySeconds: 15  # Delay before the first probe
+#   timeoutSeconds: 10  # Timeout for each probe
+#   periodSeconds: 3  # Interval between probes
+#   failureThreshold: 3  # How many failed probes before declaring the container unhealthy
 
 #This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:
