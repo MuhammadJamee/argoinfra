@@ -67,7 +67,7 @@ ingress:
   hosts:
     - host: tomcat-poc.apps-crc.testing
       paths:
-        - path: /hello-servlet/hello
+        - path: /app
           pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
@@ -87,23 +87,23 @@ resources:
     cpu: "0.5"
 
 # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
-# readinessProbe:
-#   httpGet:
-#     path: /hello-servlet/hello
-#     port: 8080
-#   initialDelaySeconds: 25
-#   timeoutSeconds: 10
-#   periodSeconds: 3
-#   failureThreshold: 3
+readinessProbe:
+  httpGet:
+    path: /app
+    port: 8080
+  initialDelaySeconds: 25
+  timeoutSeconds: 10
+  periodSeconds: 3
+  failureThreshold: 3
 
-# livenessProbe:
-#   httpGet:
-#     path: /hello-servlet/hello
-#     port: 8080
-#   initialDelaySeconds: 25
-#   timeoutSeconds: 10
-#   periodSeconds: 3
-#   failureThreshold: 3
+livenessProbe:
+  httpGet:
+    path: /app
+    port: 8080
+  initialDelaySeconds: 25
+  timeoutSeconds: 10
+  periodSeconds: 3
+  failureThreshold: 3
 
 
 #This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
