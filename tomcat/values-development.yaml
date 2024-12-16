@@ -80,10 +80,10 @@ resources:
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   limits:
-    memory: "512Mi"
+    memory: "1024Mi"
     cpu: "1"
   requests:
-    memory: "256Mi"
+    memory: "512Mi"
     cpu: "0.5"
 
 # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
@@ -91,7 +91,7 @@ readinessProbe:
   httpGet:
     path: /app
     port: 8080
-  initialDelaySeconds: 25
+  initialDelaySeconds: 10
   timeoutSeconds: 10
   periodSeconds: 3
   failureThreshold: 3
@@ -100,7 +100,7 @@ livenessProbe:
   httpGet:
     path: /app
     port: 8080
-  initialDelaySeconds: 25
+  initialDelaySeconds: 10
   timeoutSeconds: 10
   periodSeconds: 3
   failureThreshold: 3
